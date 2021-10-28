@@ -20,6 +20,7 @@
     h1 {
         font-size: 45px;
         font-weight: bold;
+        text-align: center;
     }
     
     h2 {
@@ -59,6 +60,19 @@
         color: #c9cfd4;
         background-color: #43697d;
     }
+    
+    form {
+        width: 300px;
+    }
+    
+    form input {
+        padding: 9px;
+        width: 100%;
+        border-radius: 3px;
+        border: 2px solid white;
+        outline: 1px;
+        margin: 1px 80px;
+    }
 </style>
 <header>
     <div class="logo">
@@ -77,5 +91,23 @@
 
         </ul>
     </div>
+    <h1>
 
+        Welcome to Profile Settings
+    </h1>
+    <form>
+        <p> Change Email</p>
+        <input type="email" placeholder=" Please enter your current Email" id="Email" required>
+        <br><br>
+        <input type="email" placeholder=" Please enter your Email" id="Email" required> <br><br>
+        <input type="emai" placeholder="Please confim  your Email" id="Email" required> <br><br>
+
+        <button> Save </button>
+    </form>
+    <div>
+        <p>Click here to reset your password? <a href="F_Password.html"> Password reset</a></p>
+    </div>
+    <div>
+        <button> Log off</button>
+    </div>
 </header>
