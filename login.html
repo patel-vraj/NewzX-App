@@ -167,10 +167,10 @@
     </header>
     <div class="container">
         <h2>Login</h2>
-        <form>
-            <input type="username" type="email" placeholder="Username or Email" id="Username" minlength="8" required>
+        <form action = "connect.php" method="post">
+            <input type="username" type="email" placeholder="Username or Email" id="Username" minlength="8" name="username" required>
             <br><br>
-            <input type="password" placeholder="Password" minlength="8" required>
+            <input type="password" placeholder="Password" minlength="8"  name ="password" required>
             <br><br>
 
             <a href="Signin.html" class="button">Sign in</a>
