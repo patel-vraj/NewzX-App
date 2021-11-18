@@ -72,7 +72,7 @@
         .container {
             font-size: 15px;
             margin: auto;
-            height: 525px;
+            height: 550;
             width: 500px;
             background-color: #137c73;
             border-radius: 10px;
@@ -110,7 +110,6 @@
         }
         
         p1 {
-            text-align: center;
             font-size: 15px;
             color: #d8e0d7;
         }
@@ -185,7 +184,8 @@
         <h2>Sign Up</h2>
 
         <h3>Create a free account to personalized your Newz Feed.</h3>
-        <form>
+        <form method="post">
+
             <input type="lname" placeholder="Last Name">
             <br><br>
             <input type="fname" placeholder="First Name">
@@ -193,7 +193,12 @@
             <input type="username" placeholder="Username must be 8 characters long" id="Username" minlength="8">
             <br><br>
             <input type="email" placeholder="Email">
-            <br><br>
+            <br></br>
+            <ul>
+                <li>Password must be 8 characters long </li>
+                <li>Must contain upper case, lower case, number, symbols</li>
+            </ul>
+            <br>
             <lable for Scode>
                 <input type="password" placeholder="Password" id="Scode" name=Scode pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minlength="8" required>
                 <br><br>
@@ -205,6 +210,7 @@
         <p1>By signing up to NewzX, you agree to our <a href="">Terms and Conditions and Data Policy</a></p1>
 
     </div>
+
 
 
     <p class="par">Already have an account? <a href="login.html"> Sign in</a></p>
