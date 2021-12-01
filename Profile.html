@@ -17,6 +17,43 @@
         font-weight: bold;
     }
     
+    .container {
+        font-size: 15px;
+        margin: auto;
+        height: 300px;
+        width: 500px;
+        background-color: #137c73;
+        border-radius: 10px;
+        line-height: 15px;
+        margin: auto;
+        position: relative;
+        left: -300px;
+        top: 150px;
+    }
+    
+    .container2 {
+        font-size: 15px;
+        margin: auto;
+        height: 300px;
+        width: 500px;
+        background-color: #137c73;
+        border-radius: 10px;
+        line-height: 15px;
+        margin: auto;
+        position: relative;
+        left: 300px;
+        bottom: 150px;
+    }
+    
+    form input {
+        padding: 10px;
+        width: 100%;
+        border-radius: 3px;
+        border: 2px solid white;
+        outline: 1px;
+        margin: 20px 100px;
+    }
+    
     h1 {
         font-size: 45px;
         font-weight: bold;
@@ -95,19 +132,47 @@
 
         Welcome to Profile Settings
     </h1>
-    <form>
-        <p> Change Email</p>
-        <input type="email" placeholder=" Please enter your current Email" id="Email" required>
-        <br><br>
-        <input type="email" placeholder=" Please enter your Email" id="Email" required> <br><br>
-        <input type="emai" placeholder="Please confim  your Email" id="Email" required> <br><br>
+    <div class="container">
+        "
+        <form method="post">
+            <p> Change Email</p>
+            <input type="email" placeholder=" Please enter your current Email" id="Email" required>
+            <br><br>
+            <input type="email" placeholder=" Please enter your Email" id="Email" required> <br><br>
+            <input type="emai" placeholder="Please confim  your Email" id="Email" required> <br><br>
 
-        <button> Save </button>
-    </form>
-    <div>
-        <p>Click here to reset your password? <a href="F_Password.html"> Password reset</a></p>
+            <button value="submit"> Save </button>
+        </form>
+        <div>
+            <p>Click here to reset your password? <a href=" F_Password.html "> Password reset</a></p>
+        </div>
     </div>
-    <div>
-        <button> Log off</button>
+    <div class="container2">
+        <form2>
+            <br> Favroite News Prefrence.
+            <p></p>
+            <input type="checkbox" name="Business" /> Business
+            <br><br>
+            <input type="checkbox" name="Entertainment" /> Entertainment
+            <br><br>
+            <input type="checkbox" name="General" /> General
+            <br><br>
+            <input type="checkbox" name="Health" /> Health
+            <br><br>
+            <input type="checkbox" name="Science" /> Science
+            <br><br>
+            <input type="checkbox" name="Sports" /> Sports
+            <br><br>
+            <input type="checkbox" name="Technology" /> Technology
+            <br><br>
+            <input type="submit" name="submit" value="Save" />
+        </form2>
+
     </div>
+
+    <div>
+        <button type="submit"> Log off</button>
+    </div>
+    <p3>
+    </p3>
 </header>
