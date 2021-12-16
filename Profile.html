@@ -22,7 +22,6 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: #137c73;
         height: 40px;
         border-radius: 40px;
         padding: 10px
@@ -73,7 +72,7 @@
     .container2 {
         font-size: 15px;
         margin: auto;
-        height: 300px;
+        height: 310px;
         width: 500px;
         background-color: #137c73;
         border-radius: 10px;
@@ -154,6 +153,41 @@
         font-size: 20px;
         text-align: right;
     }
+    
+    .nav2 ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    .nav2 li {
+        float: center;
+    }
+    
+    .nav2 li a {
+        display: block;
+        color: #d8e0d7;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        background-color: #2F4F4F;
+    }
+    
+    .nav2 li a:hover {
+        color: #000000;
+        background-color: #d3d3d3;
+    }
+    
+    form2 input {
+        padding: 5px;
+        width: 10%;
+        border-radius: 3px;
+        border: 2px solid white;
+        outline: 1px;
+        margin: 10px 7px;
+    }
 </style>
 
 <header>
@@ -161,45 +195,112 @@
         <img src="https://img.icons8.com/carbon-copy/220/ffffff/apple-news.png" />
     </div>
     <h1>Welcome to NewzX</h1>
+
     <div class="nav">
         <ul>
-            <li><a href="Profile.html">Profile</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="news.html">IT News</a></li>
-            <li><a href="about.html">About Us</a></li>
-
-
-
-
-
+            <li><a href="{% url 'signout'}">SIGN OUT</a></li>
+            <li><a href="{% url 'profile'}">Profile</a></li>
+            <li><a href="{% url 'contact'}">Contact</a></li>
+            <li><a href="{% url 'about'}">About Us</a></li>
+            <li><a href="{% url 'userPage'}">Home</a></li>
         </ul>
     </div>
-    <h1>
 
-        Welcome to Profile Settings
-
-    </h1>
-    <button type="submit"><a href="/signout">Signout</a></button>
+    <h2>
+        Profile Preferences
+    </h2>
+    <br>
+    <br>
+    <br>
     <div class="search-box">
-        <input class="search-txt" type="text" name="" placeholder="Type to search">
-        <a class="search-btn" href="#"> </a>
-        <i class="fas fa-search"></i>
+        <h4>Search by Country</h4>
+
+        <form action="userPage" method="get">
+            <input type="text" name="country">
+            <button type="submit" value="search"> Search </button>
+
+        </form>
+
+        <br>
+
+        <h4>Search by Keyword</h4>
+
+        <form action="userPage" method="get">
+            <input type="text" name="keyword">
+            <button type="submit" value="search"> Search </button>
+
+        </form>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="nav2">
+        <h4>Pick a category: </h4>
+        <ul>
+            <li><a href="{% url 'userPage'}?category=business">Business</a></li>
+            <li><a href="{% url 'userPage'}?category=entertainment">Entertainment</a></li>
+            <li><a href="{% url 'userPage'}?category=health">Health</a></li>
+            <li><a href="{% url 'userPage'}?category=science">Science</a></li>
+            <li><a href="{% url 'userPage'}?category=sports">Sports</a></li>
+            <li><a href="{% url 'userPage'}?category=technology">Technology</a></li>
+        </ul>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <div class="container">
 
-        <form method="post">
-            <p> Change Email</p>
-            <input type="email" placeholder=" Please enter your current Email" id="Email" required>
+        {% if messages %} {% for message in messages %}
+        <div class="alert alert-{{  message.tags }} my-5" style="border-radius: 2rem;">
+            {{ message }}
+        </div>
+        {% endfor %} {% endif %} {% block content %}
+
+        <form action="/profile" method="POST">
+
+            {% csrf_token %}
+
+            <p> Change Your Email</p>
+            <input type="email" placeholder=" Please enter your current Email" id="currEmail" name="currEmail" required>
             <br><br>
-            <input type="email" placeholder=" Please enter your Email" id="Email" required> <br><br>
-            <input type="emai" placeholder="Please confim  your Email" id="Email" required> <br><br>
+            <input type="email" placeholder=" Please enter your NEW Email" id="newEmail" name="newEmail" required> <br><br>
+            <input type="emai" placeholder="Please confirm  your NEW Email" id="Email" required> <br><br>
 
             <button value="submit"> Save </button>
         </form>
+
         <div>
-            <p>Click here to reset your password? <a href=" F_Password.html "> Password reset</a></p>
+            <p>Click here to reset your password? <a href="{% url 'resetPassword'}"> Password reset</a></p>
         </div>
     </div>
+
+    {% endblock content %}
+
     <div class="container2">
         <form2>
             <br> Favroite News Prefrence.
@@ -220,10 +321,7 @@
             <br><br>
             <input type="submit" name="submit" value="Save" />
         </form2>
-
     </div>
 
-
-    <p3>
-    </p3>
+</header>
 </header>
